@@ -1,15 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :customers
+    devise_for :admins
   namespace :admins do
-    root :to => 'home_admin#index'
-    resources :admins
+    root 'home_admin#index'
   end
 
-  root 'home#index'
+  root to: 'home#index'
 
-  devise_for :admins do
-    root :to => 'home_admin#index'
-  end
-  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
